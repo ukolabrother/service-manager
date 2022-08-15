@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders list</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-lg-3">
+        <a th:href="@{/services/orders/new}" class="btn btn-primary btn-small mb-3">Add order</a>
+    </div>
+</div>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="order : ${orders}">
+        <td class="align-middle" th:text="${order.id}"></td>
+        <td class="align-middle" th:text="${order.description}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
